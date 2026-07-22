@@ -12,7 +12,7 @@ def create_app():
     os.makedirs(app.instance_path, exist_ok=True)
 
     db.init_app(app)
-    print("DB URI em uso:", app.config["SQLALCHEMY_DATABASE_URI"])
+    print("SECRET_KEY em uso:", app.config["SECRET_KEY"])
 
     # importação aninhada para evitar importação circular entre rotas e a instância do app 
     from .routes import register_routes 
