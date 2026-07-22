@@ -6,14 +6,17 @@ import os
 # instância global do banco de dados, sem acoplamento imediato a aplicação
 db = SQLAlchemy()
 
-def create_app(): 
+def create_app(test_config=None):
     app = Flask(__name__, instance_relative_config=True)
     app.config.from_object(Config)
-    os.makedirs(app.instance_path, exist_ok=True)
 
+    if test_config:
+        app.config.update(test_config)
+
+    os.makedirs(app.instance_path, exist_ok=True)
     db.init_app(app)
-    # importação aninhada para evitar importação circular entre rotas e a instância do app 
-    from .routes import register_routes 
+
+    from .routes import register_routes
     register_routes(app)
 
-    return app 
+    return app
