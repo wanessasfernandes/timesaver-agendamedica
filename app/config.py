@@ -2,7 +2,7 @@ import os
 from pathlib import Path 
 
 # define o diretório raiz para garantir a resolução de caminhos independente de onde o script é executado
-BASE_DIR = Path(__file__).resolve().parent
+BASE_DIR = Path(__file__).resolve().parent.parent
 
 class Config:
     # utiliza variáveis de ambiente por segurança, com fallback exclusivo para ambiente local

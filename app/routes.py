@@ -1,2 +1,2 @@
-"""def register_routes(app): 
-    pass """
+def register_routes(app): 
+    pass
