@@ -1,0 +1,16 @@
+# variáveis de ambiente e ambiente virtual 
+.env
+.env.local
+venv/
+
+# python e cache 
+__pycache__/
+*.pyc
+.pytest_cache/
+instance/
+
+# banco de dados 
+*.db
+
+# configuração da IDE
+.vscode/
