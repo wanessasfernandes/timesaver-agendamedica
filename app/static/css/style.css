@@ -1,0 +1,80 @@
+body {
+    font-family: 'Segoe UI', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f8fafc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.login-card {
+    background: #ffff;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(27, 42, 71, 0.08);
+    width: 100%;
+    max-width: 350px;
+    border-top: 5px solid #48c3b6;
+}
+
+.login-card h2 {
+    text-align: center;
+    color: #1b2a47;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    color: #475569;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+input[type="text"], input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #cbd5e1;
+    border-radius: 4px;
+    box-sizing: border-box; 
+    font-size: 14px;
+    transition: border-color 0.3s ease;
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    background: #1b2a47;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background 0.3s ease, transform 0.1s ease;
+}
+
+button:hover {
+    background: #48c3b6;
+}
+
+button:active {
+    transform: scale(0.98);
+}
+
+.alert {
+    padding: 12px;
+    margin-bottom: 20px;
+    border-radius: 4px;
+    background-color: #fee2e2;
+    color: #991b1b;
+    border: 1px solid #f87171;
+    font-size: 14px;
+    text-align: center;
+    font-weight: 500;
+}
