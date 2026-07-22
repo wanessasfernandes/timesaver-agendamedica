@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Agenda Médica - TimeSaver</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link href="https://unpkg.com/tabulator-tables@5.6.1/dist/css/tabulator.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="agenda-container">
+        <div class="agenda-header">
+            <h1>TimeSaver — Agenda Médica</h1>
+            <a href="{{ url_for('logout') }}" class="logout-link">Sair</a>
+        </div>
+
+        <div class="busca-container">
+            <input type="text" id="busca-input" placeholder="Buscar por paciente, CPF ou médico...">
+        </div>
+
+        <div id="mensagem-vazio" class="mensagem-vazio" style="display: none;">
+            Nenhum agendamento encontrado.
+        </div>
+
+        <div id="agenda-table"></div>
+    </div>
+
+    <script src="https://unpkg.com/tabulator-tables@5.6.1/dist/js/tabulator.min.js"></script>
+    <script src="{{ url_for('static', filename='js/agenda.js') }}"></script>
+</body>
+</html>
