@@ -30,10 +30,10 @@ Pré-requisitórios: Docker e Docker Compose instalador.
     `cd timesaver-agendamedica`
 
 2. Crie o arquivo `.env` na raiz do projeto e preencha a `SECRET_KEY`: 
-    `SECRET_KEY: uma-chave-secreta-`
+    `SECRET_KEY: uma-chave-secreta`
 
 3. Suba a aplicação: 
-    docker compose up --build 
+    docker compose up --build
 
 4. Acesse `http://localhost:5000` no navegador.
 
