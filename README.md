@@ -25,12 +25,16 @@ A aplicação foi contruida como um serviço Flask único, responsável por trê
 
 Pré-requisitórios: Docker e Docker Compose instalador. 
 
-1.Clone o repositório: 
-    `git clone <https://github.com/wanessasfernandes/timesaver-agendamedica.git>`
-    `cd timesaver-agendamedica`
+1.Clone o repositório:
+``` 
+    git clone <https://github.com/wanessasfernandes/timesaver-agendamedica.git>
+    cd timesaver-agendamedica
+```
 
 2. Crie o arquivo `.env` na raiz do projeto e preencha a `SECRET_KEY`: 
-    `SECRET_KEY: uma-chave-secreta`
+```
+    SECRET_KEY: uma-chave-secreta
+```
 
 3. Suba a aplicação: 
     docker compose up --build
@@ -42,12 +46,16 @@ Ao subir, o container executa automaticamente o script de seed, criando o usuár
 **Observação sobre o banco de dados no Docker**: como o banco utilizado é SQLite (um arquivo, não um serviço de rede), o `docker-compose.yml` não define um serviço separado de banco de dados. O arquivo `agenda.db` é persistido através de um volume (`./instance:/app/instance`), garantindo que os dados não sejam perdidos ao recriar o container. Isso atende ao requisito de "iniciar a aplicação e o banco de dados com um único comando", já que ambos sobem juntos através do único serviço definido.
 
 ### Executando sem Docker (desenvolvimento local)
+```
+python -m venv venv
+venv\Script\active 
 
-`python -m venv venv`
-`venv\Script\active` 
-`pip install -r requirements.txt`
-`python seed.py`
-`python run.py`
+pip install -r requirements.txt
+
+python seed.py
+
+python run.py
+```
 
 ## Credenciais do usuário de teste
 
