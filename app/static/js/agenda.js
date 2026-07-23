@@ -4,17 +4,27 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const table = new Tabulator("#agenda-table", {
         layout: "fitColumns",
+        responsiveLayout: "collapse",
         placeholder: "Carregando agendamentos...",
         columns: [
-            { title: "Data", field: "data", sorter: "date" },
-            { title: "Horário", field: "horario" },
-            { title: "Paciente", field: "paciente" },
-            { title: "CPF", field: "cpf" },
-            { title: "Médico", field: "medico" },
-            { title: "Especialidade", field: "especialidade" },
-            { title: "Convênio", field: "convenio" },
-            { title: "Status", field: "status" },
+            { title: "Data", field: "data", sorter: "date", width: 110, minWidth: 90 },
+            { title: "Horário", field: "horario", width: 90, minWidth: 70 },
+            { title: "Paciente", field: "paciente", minWidth: 150, widthGrow: 2 },
+            { title: "CPF", field: "cpf", width: 130, responsive: 2 },
+            { title: "Médico", field: "medico", minWidth: 150, widthGrow: 2, responsive: 1 },
+            { title: "Especialidade", field: "especialidade", minWidth: 120, responsive: 3 },
+            { title: "Convênio", field: "convenio", minWidth: 120, responsive: 3 },
+            {
+                title: "Status",
+                field: "status",
+                width: 120,
+                formatter: function (cell) {
+                    const valor = cell.getValue();
+                    return `<span class="status-badge ${valor}">${valor}</span>`;
+                },
+            },
         ],
+        responsiveLayout: "collapse",
     });
 
     function carregarAgendamentos(busca = "") {
