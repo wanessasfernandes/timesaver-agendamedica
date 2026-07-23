@@ -99,7 +99,7 @@ O desenvolvimento foi conduzido diretamente na branch `main`, sem uso de feature
 Os testes automatizados utilizam um banco SQLite em memória (`sqlite:///:memory:`), isolado do banco de desenvolvimento (`instance/agenda.db`). Isso garante que a suíte de testes seja rápida, isolada e repetível — cada execução parte de um estado limpo e conhecido, sem depender ou interferir nos dados reais da aplicação.
 
 ### Seed idempotente
-O script `seed/seed.py` verifica a existência de dados antes de inserir novos registros, tornando-o seguro para execução repetida (tanto manualmente quanto automaticamente, a cada subida do container Docker), sem gerar erros de duplicidade ou violação de unicidade.
+O script `seed.py` verifica a existência de dados antes de inserir novos registros, tornando-o seguro para execução repetida (tanto manualmente quanto automaticamente, a cada subida do container Docker), sem gerar erros de duplicidade ou violação de unicidade.
 
 ### Tratamento de erros e logging
 Todas as rotas que acessam o banco de dados estão envolvidas em blocos `try/except`, capturando `SQLAlchemyError` e retornando mensagens amigáveis ao usuário, sem expor stack traces técnicos. Eventos relevantes (tentativas de login inválidas, erros de conexão, buscas sem resultado) são registrados via módulo `logging` padrão do Python, facilitando o diagnóstico de problemas em ambiente real.
