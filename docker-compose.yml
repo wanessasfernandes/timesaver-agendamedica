@@ -7,5 +7,5 @@ services:
       - SECRET_KEY=${SECRET_KEY}
       - FLASK_DEBUG=${FLASK_DEBUG:-0}
     volumes:
-      - ./instance:/instance 
+      - ./instance:/app/instance
     restart: unless-stopped
